@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!--Importar los iconos de google-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+  <!--instalamos jquery-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+   <?!= include("B.-codigo-css");?>
+
+</head>
+  <body>
+ <!--agregamos una barra de navegación-->
+  <nav class="teal darken-3"> <!-- color -->
+    <div class="nav-wrapper container"> <!--container = centrado -->
+      <a href="#!" class="brand-logo">
+        <img src="https://drive.google.com/uc?export=download&id=1sboPxXdnBVl4EjSbslxHpegUeGiG08dK" class="logo2 logo"/>
+        </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="#">Documentación</a></li>
+        <li><a href="#">Registro</a></li>
+        <li><a href="#">Eventualidades</a></li>
+        <li><a href="#">Gráficos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--agregamos una barra de lateral-->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#"><i class="material-icons left">send</i>Documentación</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="#">Eventualidades</a></li>
+    <li><a href="#"><i class="material-icons left">Gráficos</i>Mobile</a></li>
+  </ul>
+    
+  	<!-- para poner tarjeta-->
+    <div class="container section">
+      <div class="row">
+          <form class="col s12">
+              <div class="row card-panel  sombreadoGrueso">
+                      
+                      <!--- aqui va los input-->
+                      <div class="input-field col s12 m6 l4">
+                      <i class="material-icons prefix">keyboard_hide</i>
+                      <input type="text" id="autoComp" class="claseAutocompletado">
+                      <label for="autoComp">Monedero</label>
+                      </div>
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">location_on</i>
+                        <!--este es para un icono-->
+                        <input id="territorio" value="" placeholder="Territorio" type="text" name="territorio" class="validate" required="true" aria-required="true" >
+                        <!--<label for="territorio">Territorio</label>-->
+                      </div>
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">date_range</i>
+                        <!--este es para un icono-->
+                        <input id="periodo" value="" placeholder="Periodo" type="text" name="periodo" class="validate" required="true" aria-required="true" >
+                        <!--<label for="Periodo">Territorio</label>-->
+                      </div>
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">drive_eta</i>
+                        <!--este es para un icono-->
+                        <input id="marca" value="" type="text" name="marca" class="validate" required="true" aria-required="true" placeholder="Marca" >
+                        <!--<label for="marca">Marca</label>-->
+                      </div>
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">drive_eta</i>
+                        <!--este es para un icono-->
+                        <input id="submarca" value="" type="text" name="submarca" class="validate" required="true" aria-required="true" placeholder="Submarca" >
+                        <!--<label for="submarca">Submarca</label>-->
+                      </div> 
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">dvr</i>
+                        <!--este es para un icono-->
+                        <input id="placa" type="text" value="" name="placa" class="validate" required="true" aria-required="true" placeholder="Placa" >
+                        <!--<label for="placa">Placa</label>-->
+                      </div>
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">slow_motion_video</i>
+                        <!--este es para un icono-->
+                        <input id="kilInicial" type="number" value="" name="kilInicial" class="validate" required="true" aria-required="true">
+                        <label for="kilInicial">Kilometraje Inicial</label>
+                      </div>
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix rotar">slow_motion_video</i>
+                        <!--este es para un icono-->
+                        <input id="kilFinal" type="number" value="" name="kilFinal" class="validate" required="true" aria-required="true">
+                        <label for="kilFinal">Kilometraje Final</label>
+                      </div>  
+
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">local_gas_station</i>
+                        <!--este es para un icono-->
+                        <input id="litros" type="number" value="" name="litros" class="validate" required="true" aria-required="true">
+                        <label for="litros">Litros Totales</label>
+                      </div>  
+
+              </div> <!--tarjeta fin-->
+          </form>
+        <button class="btn sombreadoGrueso" id="botonEnviar">Enviar</button> <!-- importante el boton va fuera del form --> 
+      </div>
+    </div>
+  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <?!= include("D.-java-script");?>
+    <?!= include("C.-materialize-js");?>
+
+  </body>
+</html>
