@@ -1,0 +1,35 @@
+<script  type="text/javascript">
+
+function adjuntosEnviar(parametroThis){
+  //alert("FUNCIONA ADJUNTOS");
+ 
+  google.script.run.subiendoArchivos(parametroThis);
+  document.getElementById("boton1").disabled = true;
+
+    setTimeout(()=>{
+      desaparecerCargador();
+    },20000);
+
+    aparecerCargador();
+
+
+
+
+};
+
+function aparecerCargador(){
+  document.getElementById("cargando").className="";
+}
+
+function desaparecerCargador(){
+  document.getElementById("cargando").className="hide";
+  alert("Hemos recibido tu registro!!");
+}
+
+
+       
+
+
+
+
+</script>

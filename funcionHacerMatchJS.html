@@ -1,0 +1,34 @@
+ <script type="text/javascript">
+ /**************************************** Haciendo el match *************************************************/
+      document.getElementById("botonProvisional").addEventListener("click",trayendoDatos);
+
+    //sacando el valor del select
+    function trayendoDatos(){
+      var valorNumeroSerie=document.getElementById("monedero").value;
+      google.script.run
+      .withSuccessHandler(cambiarInput) //funcion si si funciona y recibe parametro inmediato
+      .buscarPorParametro(valorNumeroSerie);
+    }
+
+    function cambiarInput(parametroDesdeGAS){
+      var inputTerritorio = document.getElementById("territorio");
+      inputTerritorio.value=parametroDesdeGAS[0];
+
+      var inputTerritorio = document.getElementById("territorio2");
+      inputTerritorio.value=parametroDesdeGAS[0];
+
+      var inputTerritorio = document.getElementById("periodo");
+      inputTerritorio.value="Julio 2021";
+
+      var inputMarca = document.getElementById("marca");
+      inputMarca.value=parametroDesdeGAS[1];
+
+      var inputSubmarca = document.getElementById("submarca");
+      inputSubmarca.value=parametroDesdeGAS[2];
+
+      var inputPlaca = document.getElementById("placa");
+      inputPlaca.value=parametroDesdeGAS[3];
+
+    }
+
+ </script>

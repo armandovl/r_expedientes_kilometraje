@@ -27,7 +27,7 @@
         </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="active"><a href="#">Documentación</a></li>
+        <li class="active"><a href="#">Documentación Kilometraje</a></li>
         <li><a href="#">Registro</a></li>
         <li><a href="#">Eventualidades</a></li>
         <li><a href="#">Gráficos</a></li>
@@ -37,7 +37,7 @@
 
   <!--agregamos una barra de lateral-->
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="#"><i class="material-icons left">send</i>Documentación</a></li>
+    <li><a href="#"><i class="material-icons left">send</i>Documentación Kilometraje</a></li>
     <li><a href="#">Registro</a></li>
     <li><a href="#">Eventualidades</a></li>
     <li><a href="#"><i class="material-icons left">Gráficos</i>Mobile</a></li>
@@ -52,15 +52,15 @@
                       <!--- aqui va los input-->
                       <div class="input-field col s12 m6 l4">
                       <i class="material-icons prefix">keyboard_hide</i>
-                      <input type="text" id="autoComp" class="claseAutocompletado">
-                      <label for="autoComp">Monedero</label>
+                      <input type="text" id="monedero" name="monederoN" class="claseAutocompletado" title="Poner la primer letra M (mayúscula) seguido de un guión y los 4 últimos dígitos de tu monedero M-1234" onchange="trayendoDatos()">
+                      <label for="monedero">ID de Monedero</label>
                       </div>
 
                       <div class="input-field col s12 m6 l4">
                         <!--este es para un icono-->
                         <i class="material-icons prefix">location_on</i>
                         <!--este es para un icono-->
-                        <input id="territorio" value="" placeholder="Territorio" type="text" name="territorio" class="validate" required="true" aria-required="true" >
+                        <input id="territorio" value="" placeholder="Territorio" type="text" name="territorio" class="validate" required="true" aria-required="true" disabled>
                         <!--<label for="territorio">Territorio</label>-->
                       </div>
 
@@ -68,14 +68,14 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">date_range</i>
                         <!--este es para un icono-->
-                        <input id="periodo" value="" placeholder="Periodo" type="text" name="periodo" class="validate" required="true" aria-required="true" >
+                        <input id="periodo" value="" placeholder="Periodo" type="text" name="periodo" class="validate" required="true" aria-required="true" disabled>
                         <!--<label for="Periodo">Territorio</label>-->
                       </div>
                       <div class="input-field col s12 m6 l4">
                         <!--este es para un icono-->
                         <i class="material-icons prefix">drive_eta</i>
                         <!--este es para un icono-->
-                        <input id="marca" value="" type="text" name="marca" class="validate" required="true" aria-required="true" placeholder="Marca" >
+                        <input id="marca" value="" type="text" name="marca" class="validate" required="true" aria-required="true" placeholder="Marca" disabled>
                         <!--<label for="marca">Marca</label>-->
                       </div>
 
@@ -83,7 +83,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">drive_eta</i>
                         <!--este es para un icono-->
-                        <input id="submarca" value="" type="text" name="submarca" class="validate" required="true" aria-required="true" placeholder="Submarca" >
+                        <input id="submarca" value="" type="text" name="submarca" class="validate" required="true" aria-required="true" placeholder="Submarca" disabled>
                         <!--<label for="submarca">Submarca</label>-->
                       </div> 
 
@@ -91,7 +91,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">dvr</i>
                         <!--este es para un icono-->
-                        <input id="placa" type="text" value="" name="placa" class="validate" required="true" aria-required="true" placeholder="Placa" >
+                        <input id="placa" type="text" value="" name="placa" class="validate" required="true" aria-required="true" placeholder="Placa" disabled>
                         <!--<label for="placa">Placa</label>-->
                       </div>
 
@@ -99,7 +99,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">slow_motion_video</i>
                         <!--este es para un icono-->
-                        <input id="kilInicial" type="number" value="" name="kilInicial" class="validate" required="true" aria-required="true">
+                        <input id="kilInicial" type="number" value="" name="kilInicial" class="validate" required="true" aria-required="true" title="Kilometraje inicial de la primera quincena">
                         <label for="kilInicial">Kilometraje Inicial</label>
                       </div>
 
@@ -107,7 +107,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix rotar">slow_motion_video</i>
                         <!--este es para un icono-->
-                        <input id="kilFinal" type="number" value="" name="kilFinal" class="validate" required="true" aria-required="true">
+                        <input id="kilFinal" type="number" value="" name="kilFinal" class="validate" required="true" aria-required="true" title="Kilometraje al final de la segunda quincena">
                         <label for="kilFinal">Kilometraje Final</label>
                       </div>  
 
@@ -115,20 +115,93 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">local_gas_station</i>
                         <!--este es para un icono-->
-                        <input id="litros" type="number" value="" name="litros" class="validate" required="true" aria-required="true">
+                        <input id="litros" type="number" value="" name="litros" class="validate" required="true" aria-required="true" title="Litros totales por mes">
                         <label for="litros">Litros Totales</label>
-                      </div>  
+                      </div>
+                      
+                        <div class="file-field input-field col s12 m12 l6">
+                          <div class="btn">
+                            <i class="material-icons left">system_update_alt</i>
+                            <span>Bitácora Central</span>
+                            <input id="bitacoraCentral" value="" type="file" name="bitacoraCentral" required="true" accept="application/pdf">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Bitácora oficina central">
+                          </div>
+                        </div>
 
+                        <div class="file-field input-field col s12 m12 l6">
+                          <div class="btn">
+                            <i class="material-icons left">system_update_alt</i>
+                            <span>Odómetro Final</span>
+                            <input id="odometro" value="" type="file" name="odometro" required="true" accept="application/pdf">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Odómetro último día del mes">
+                          </div>
+                        </div>                                                  
+
+                        <div class="file-field input-field col s12 m12 l6">
+                          <div class="btn">
+                            <i class="material-icons left">system_update_alt</i>
+                            <span>Bitácora Quincena 1</span>
+                            <input id="bitacoraQuincena1" value="" type="file" name="bitacoraQuincena1" required="true" accept="application/pdf">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Bitácora territorial quincena 1">
+                          </div>
+                        </div>   
+
+                        <div class="file-field input-field col s12 m12 l6">
+                          <div class="btn">
+                            <i class="material-icons left">system_update_alt</i>
+                            <span>Bitácora Quincena 2</span>
+                            <input id="bitacoraQuincena2" value="" type="file" name="bitacoraQuincena2" required="true" accept="application/pdf">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Bitácora territorial quincena 1">
+                          </div>
+                        </div>
+
+                        <div class="input-field col s12 m12 l12">
+                          <input id="territorio2" placeholder="territorio2" type="text" name="territorio2" required="true" class="hide">
+                        </div>
+
+                        <div class="input-field col s12 m12 l12">
+                          <input id="escondido" placeholder="escondido" type="text" name="escondido" required="true" class="hide">
+                        </div>   
+
+                        <div class="hide" id="cargando">
+                        <br><br>
+                        <div class="progress">
+                        <div class="indeterminate"></div>
+                        </div>
+                        <h6>Enviando archivos.....</h6>
+                      </div> 
               </div> <!--tarjeta fin-->
+
+              <button  id="botonLimpiar" class="btn sombreadoGrueso red accent-4" 
+                onclick="this.form.reset()" >limpiar</button>
+
+              <button  id="botonValidar" class="btn sombreadoGrueso lime" onclick="validar()" >validar</button>
+
+              <button  id="boton1" src="" value="Subir Archivos" class="btn sombreadoGrueso" 
+              onclick="enviarSheet();adjuntosEnviar(this.parentNode);" 
+              disabled>Enviar Registro</button>
+
           </form>
-        <button class="btn sombreadoGrueso" id="botonEnviar">Enviar</button> <!-- importante el boton va fuera del form --> 
+
       </div>
     </div>
-  
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <?!= include("D.-java-script");?>
+    <?!= include("funcionEnviarHojaJS");?>
+    <?!= include("funcionHacerMatchJS");?>
+    <?!= include("funcionSubirArchivosJS");?>
+    <?!= include("funcionValidarDatos");?>
     <?!= include("C.-materialize-js");?>
+    <?!= include("funcionAutocompletado");?>
 
   </body>
 </html>

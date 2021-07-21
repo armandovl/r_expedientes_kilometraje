@@ -1,0 +1,39 @@
+<script>
+  function validar(){
+
+    var nombre1= document.getElementById("monedero").value; //ya nada mas se descomponer
+    var nombre2= document.getElementById("territorio").value;
+    var nombre3= document.getElementById("marca").value;
+    var nombre4= document.getElementById("submarca").value; //ya nada mas se descomponer
+    var nombre5= document.getElementById("kilInicial").value;
+    var nombre6= document.getElementById("kilFinal").value;
+    var nombre7= document.getElementById("placa").value;
+    var nombre8= document.getElementById("litros").value;
+    var nombre9= document.getElementById("periodo").value;
+
+    var nombre12= document.getElementById("odometro").value;
+    var nombre13= document.getElementById("bitacoraQuincena2").value;
+    var nombre14= document.getElementById("bitacoraQuincena1").value;
+    var nombre15= document.getElementById("bitacoraCentral").value;
+
+
+
+
+    if(nombre1 == "" || nombre2 == ""|| nombre3 == "" || nombre4 == ""|| 
+    nombre5 == ""|| nombre6 == "" || nombre7 == ""|| nombre8 == ""|| nombre9 == ""){
+      
+      //alert("que mierda");
+      alert("Todos los campos son obligatorios");
+  
+    }else if ( nombre12 == "" || nombre13 == "" || nombre14 == "" || nombre15 == ""){
+
+      alert("Todos los documentos son obligatorios");
+    }else{
+
+      alert("Botón ENVIAR REGISTRO Activado");
+      document.getElementById("boton1").disabled = false;
+    }
+  
+  
+}
+</script>

@@ -1,0 +1,42 @@
+ <script type="text/javascript">
+	
+    // al hacer click en el boton se ejecuta la funcion script enviar sheet
+    //document.getElementById("botonEnviar").addEventListener("click",enviarSheet);
+    
+    function enviarSheet(){
+    //alert("se ejecuta la función script");
+
+    
+    var compilado={}; //variable que compila la informacion de varias variables
+    compilado.nombre1= document.getElementById("monedero").value; //ya nada mas se descomponer
+    compilado.nombre2= document.getElementById("territorio").value;
+    compilado.nombre3= document.getElementById("periodo").value;
+    compilado.nombre4= document.getElementById("marca").value;
+    compilado.nombre5= document.getElementById("submarca").value;
+    compilado.nombre6= document.getElementById("placa").value;
+    compilado.nombre7= document.getElementById("kilInicial").value;
+    compilado.nombre8= document.getElementById("kilFinal").value;
+    compilado.nombre9= document.getElementById("litros").value;
+    compilado.nombre10= (compilado.nombre8 - compilado.nombre7)/compilado.nombre9 ;
+
+
+
+    //alert(compilado.nombre2);
+
+    google.script.run.hacerClick(compilado);  // *esta linea ejecuta funciones del .gs el nombre1 pasa como argumento
+
+    
+    };
+
+  
+   </script>
+
+
+
+
+
+
+
+
+
+
